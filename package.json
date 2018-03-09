@@ -1,0 +1,17 @@
+{
+  "name": "@wulechuan/find-package-dot-json",
+  "version": "0.0.1",
+  "description": "Search folder tree upwards and locate the nearest npm project root folder, returning the parsed package.json as an object.",
+  "author": "wulechuan <wulechuan@live.com>",
+  "license": "WTFPL",
+  "keywords": [
+    "packagejson",
+    "package.json",
+    "npmRootFolder"
+  ],
+  "main": "source/index.js",
+  "scripts": {},
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}
