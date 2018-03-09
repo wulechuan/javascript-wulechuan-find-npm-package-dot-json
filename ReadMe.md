@@ -20,42 +20,41 @@ Search folder tree **upwards** and locate the nearest npm project **root** folde
 function ensureCWDToBeNPMProjectRootAndReturnPackageJSON(options) {
 
 
+    /* ********************************************* */
 
-	/* ********************************************* */
-
-	const result = require('@wulechuan/find-package-dot-json')({
-		checkingStartPoint:    '<a path to start with>',             // optional
-		desiredNPMProjectName: '<your fancy npm project name here>', // optional
+    const result = require('@wulechuan/find-package-dot-json')({
+        checkingStartPoint:    '<a path to start with>',             // optional
+        desiredNPMProjectName: '<your fancy npm project name here>', // optional
     });
 
-	/* ********************************************* */
+    /* ********************************************* */
 
 
 
     // If fail to find one, throw an error
-	if (! result) {
-		throw ReferenceError('Fail to locate npm project root.');
-	}
+    if (! result) {
+        throw ReferenceError('Fail to locate npm project root.');
+    }
 
 
     // If not thrown, now we are safe to move on.
-	const {
-		npmProjectRootPath,
-	} = result;
+    const {
+        npmProjectRootPath,
+    } = result;
 
 
-	process.chdir(npmProjectRootPath);
+    process.chdir(npmProjectRootPath);
 
 
     // By the way, the line below simulates a gulp log.
-	console.log(`[${
-		chalk.gray(moment().format('HH:mm:ss'))
-	}] Working directory changed to\n${' '.repeat('[HH:mm:ss] '.length)}${
-		chalk.green(process.cwd())
-	}\n\n\n`);
+    console.log(`[${
+        chalk.gray(moment().format('HH:mm:ss'))
+    }] Working directory changed to\n${' '.repeat('[HH:mm:ss] '.length)}${
+        chalk.green(process.cwd())
+    }\n\n\n`);
 
 
-	return result;
+    return result;
 }
 ```
 
@@ -71,8 +70,8 @@ function ensureCWDToBeNPMProjectRootAndReturnPackageJSON(options) {
 
 ```javascript
 {
-	checkingStartPoint:    '<a path to start with>',             // optional
-	desiredNPMProjectName: '<your fancy npm project name here>', // optional
+    checkingStartPoint:    '<a path to start with>',             // optional
+    desiredNPMProjectName: '<your fancy npm project name here>', // optional
 }
 ```
 
