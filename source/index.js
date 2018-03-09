@@ -5,7 +5,7 @@ const { join: joinPath } = pathTool;
 
 module.exports = function findNPMProjectRootFolderAndPackageJSON(options = {}) {
 	const {
-		checkingStartPoint = process.cwd(),
+		searchingStartPath = process.cwd(),
 		desiredNPMProjectName = '',
 	} = options;
 
@@ -15,7 +15,7 @@ module.exports = function findNPMProjectRootFolderAndPackageJSON(options = {}) {
 	}
 
 
-	let currentCheckingPath = checkingStartPoint;
+	let currentCheckingPath = searchingStartPath;
 	let packageJSON;
 
 	while (

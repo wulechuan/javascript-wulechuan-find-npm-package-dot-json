@@ -23,7 +23,7 @@ function ensureCWDToBeNPMProjectRootAndReturnPackageJSON(options) {
     /* ********************************************* */
 
     const result = require('@wulechuan/find-package-dot-json')({
-        checkingStartPoint:    '<a path to start with>',             // optional
+        searchingStartPath:    '<a path to start with>',             // optional
         desiredNPMProjectName: '<your fancy npm project name here>', // optional
     });
 
@@ -70,7 +70,7 @@ function ensureCWDToBeNPMProjectRootAndReturnPackageJSON(options) {
 
 ```javascript
 {
-    checkingStartPoint:    '<a path to start with>',             // optional
+    searchingStartPath:    '<a path to start with>',             // optional
     desiredNPMProjectName: '<your fancy npm project name here>', // optional
 }
 ```
