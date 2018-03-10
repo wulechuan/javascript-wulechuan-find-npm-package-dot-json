@@ -158,7 +158,7 @@ The desired npm project name.
 <br/>
 <br/>
 
-## return value
+## Return Value
 
 | _Spec_             | _Def_
 |--------------------|--------------
