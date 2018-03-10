@@ -96,11 +96,10 @@ Let's call the argument `options` below.
 
 ### `Options`, aka `arguments[0]`
 
-| | |
-| ---- | ---------------------
-| Type | object
-| Optional | yes
-| | |
+| _Spec_       | _Def_
+|--------------|--------------
+| **Type**     | object
+| **Optional** | yes
 
 ```javascript
 {
@@ -113,13 +112,12 @@ Let's call the argument `options` below.
 
 #### `options.searchingStartPath`
 
-| | |
-| ---- | ---------------------
-| Type | string
-| Allowed Value | any valid path, either absolute or relative
-| Default Value | `process.cwd()`
-| Optional | yes
-| | |
+| _Spec_            | _Def_
+|-------------------|--------------
+| **Type**          | string
+| **Allowed Value** | any valid path, either absolute or relative
+| **Default Value** | `process.cwd()`
+| **Optional**      | yes
 
 The path of the searching starting folder.
 
@@ -132,13 +130,12 @@ The path of the searching starting folder.
 
 #### `options.desiredNPMProjectName`
 
-| | |
-| ---- | ---------------------
-| Type | multiple
-| Allowed Value | string that obeys npm naming rules \| non-string \| empty string
-| Default Value | an empty string
-| Optional | yes
-| | |
+| _Spec_            | _Def_
+|-------------------|--------------
+| **Type**          | multiple
+| **Allowed Value** | string that obeys npm naming rules \| non-string \| empty string
+| **Default Value** | an empty string
+| **Optional**      | yes
 
 The desired npm project name.
 
@@ -163,10 +160,10 @@ The desired npm project name.
 
 ## return value
 
-| | |
-| --- | ---
-| Type | object
-| Possible Value | an object (`null` is allowed)
+| _Spec_             | _Def_
+|--------------------|--------------
+| **Type**           | object
+| **Possible Value** | an object (`null` is allowed)
 
 *   If the tool fails to find a matched result,
     `null` is returned.
