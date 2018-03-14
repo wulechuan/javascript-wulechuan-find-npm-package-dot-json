@@ -19,7 +19,7 @@ module.exports = function findNPMProjectRootFolderAndPackageJSON(options = {}) {
 	let packageJSON;
 
 	while (
-		! (packageJSON = foundValidPackageJSON(currentCheckingPath, desiredNPMProjectName)) &&
+		! (packageJSON = findValidPackageJSON(currentCheckingPath, desiredNPMProjectName)) &&
 		! folderIsTopMostOne(currentCheckingPath)
 	) {
 		currentCheckingPath = pathTool.resolve(currentCheckingPath, '..');
@@ -53,7 +53,7 @@ function throwIfNPMProjectNameSeemsInvalid(projectName) { // https://docs.npmjs.
 	}
 }
 
-function foundValidPackageJSON(folder, desiredNPMProjectName) {
+function findValidPackageJSON(folder, desiredNPMProjectName) {
 	const foundPackageJsonFullPath = joinPath(folder, 'package.json');
 
 	if (fileSytem.existsSync(foundPackageJsonFullPath)) {
