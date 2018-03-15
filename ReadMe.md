@@ -1,9 +1,21 @@
-# NPM Page
+# NPM Package
 
-package name: 
+<dl>
+<dt>Package Name</dt>
+<dd>
+
 [@wulechuan/find-package-dot-json](https://www.npmjs.com/package/@wulechuan/find-package-dot-json)
 
-author: 南昌吴乐川
+</dd>
+<dt>Author</dt>
+<dd>南昌吴乐川</dd>
+</dl>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
 
 <br/>
 <br/>
@@ -12,7 +24,8 @@ author: 南昌吴乐川
 
 # Introduction
 
-Search folder tree **upwards** and locate the nearest npm project **root** folder, returning the parsed `package.json` as an object.
+Searches folder tree **upwards** to try to locate the nearest npm project **root** folder.
+If succeeds, returns both the found path and the parsed `package.json` as an object.
 
 <br/>
 <br/>
@@ -26,7 +39,6 @@ function ensureCWDToBeNPMProjectRootAndReturnPackageJSON(options) {
     /** **********************************************
      *   Utilizing `@wulechuan/find-package-dot-json`
      ** ********************************************** */
-
     const result = require('@wulechuan/find-package-dot-json')({
         /**
          * Optional.
@@ -42,18 +54,17 @@ function ensureCWDToBeNPMProjectRootAndReturnPackageJSON(options) {
          */
         desiredNPMProjectName: '<your fancy npm project name here>',
     });
-
     /** ********************************************** */
 
 
 
-    // If it fails to find one, throw an error
+    // If it fails to find one, let's throw an error here.
     if (! result) {
         throw ReferenceError('Fail to locate npm project root.');
     }
 
 
-    // If the program is not thrown, now we are safe to move on.
+    // If the program was not thrown, now we are safe to move on.
     const {
         npmProjectRootPath,
     } = result;
@@ -62,10 +73,6 @@ function ensureCWDToBeNPMProjectRootAndReturnPackageJSON(options) {
 
     // Let's make some use of the found path.
     process.chdir(npmProjectRootPath);
-
-
-
-    // By the way, the line below simulates a gulp log.
     console.log(`[${
         chalk.gray(moment().format('HH:mm:ss'))
     }] Working directory changed to\n${' '.repeat('[HH:mm:ss] '.length)}${
@@ -74,7 +81,7 @@ function ensureCWDToBeNPMProjectRootAndReturnPackageJSON(options) {
 
 
 
-    // How about return the result for outside world to make more use of it.
+    // Return the result for outside world to make use of it.
     return result;
 }
 ```
@@ -94,7 +101,7 @@ And even that argument is optional.
 
 Let's call the argument `options` below.
 
-### `Options`, aka `arguments[0]`
+### `options`, aka `arguments[0]`
 
 | _Spec_       | _Def_
 |--------------|--------------
@@ -146,14 +153,14 @@ The desired npm project name.
     then the string will be check by a Regular Expression
     to make sure the string to be a valid npm project name.
 
+    -   If the value is considered to be an invalid npm project name,
+        this tool will throw an error;
+
+    -   If the value seems to be a valid one,
+        then only the first met `package.json` with the matched
+        `name` property counts.
+
     > See https://docs.npmjs.com/files/package.json#name
-
-    If the value is considered an invalid npm project name,
-    this tool will throw an error;
-
-    If the value seems to be a valid one,
-    then only the first found `package.json` with the matched
-    `name` property counts.
 
 <br/>
 <br/>
@@ -163,18 +170,18 @@ The desired npm project name.
 | _Spec_             | _Def_
 |--------------------|--------------
 | **Type**           | object
-| **Possible Value** | an object (`null` is allowed)
+| **Possible Value** | an object literal or a `null`
 
 *   If the tool fails to find a matched result,
     `null` is returned.
 
 *   If the desired npm project is located successfully,
-    an object literal is return, which looks like:
+    an object literal is returned, which looks like:
 
     ```javascript
     {
         npmProjectRootPath: 'a string',
-        packageJSON: 'an object',
+        packageJSON:        'an object',
     }
     ```
 

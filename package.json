@@ -1,6 +1,6 @@
 {
   "name": "@wulechuan/find-package-dot-json",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Search folder tree upwards and locate the nearest npm project root folder, returning the parsed package.json as an object.",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
