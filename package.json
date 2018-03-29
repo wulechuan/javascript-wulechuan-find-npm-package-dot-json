@@ -1,6 +1,6 @@
 {
   "name": "@wulechuan/find-package-dot-json",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Search folder tree upwards and locate the nearest npm project root folder, returning the parsed package.json as an object.",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
@@ -22,5 +22,8 @@
   "scripts": {},
   "dependencies": {
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@wulechuan/css-stylus-markdown-themes": "^1.0.12"
   }
 }

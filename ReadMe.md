@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="./node_modules/@wulechuan/css-stylus-markdown-themes/dist/default.css">
+
 # NPM Package
 
 <dl>
@@ -8,27 +10,15 @@
 
 </dd>
 <dt>Author</dt>
-<dd>南昌吴乐川</dd>
+<dd><p>南昌吴乐川</p></dd>
 </dl>
 
-<br/>
-<br/>
-<br/>
-<br/>
-
-
-<br/>
-<br/>
-<br/>
-<br/>
 
 # Introduction
 
 Searches folder tree **upwards** to try to locate the nearest npm project **root** folder.
 If succeeds, returns both the found path and the parsed `package.json` as an object.
 
-<br/>
-<br/>
 
 # Usage
 
@@ -87,11 +77,6 @@ function ensureCWDToBeNPMProjectRootAndReturnPackageJSON(options) {
 ```
 
 
-<br/>
-<br/>
-<br/>
-<br/>
-
 # API
 
 ## Argument
@@ -99,14 +84,14 @@ function ensureCWDToBeNPMProjectRootAndReturnPackageJSON(options) {
 At present, there is only one argument that is accepted.
 And even that argument is optional.
 
-Let's call the argument `options` below.
+Let's call the argument `options`.
 
 ### `options`, aka `arguments[0]`
 
-| _Spec_       | _Def_
-|--------------|--------------
-| **Type**     | object
-| **Optional** | yes
+| _Spec_       | _Def_  |
+| ------------ | ------ |
+| **Type**     | object |
+| **Optional** | yes    |
 
 ```javascript
 {
@@ -115,16 +100,15 @@ Let's call the argument `options` below.
 }
 ```
 
-<br/>
 
 #### `options.searchingStartPath`
 
-| _Spec_            | _Def_
-|-------------------|--------------
-| **Type**          | string
-| **Allowed Value** | any valid path, either absolute or relative
-| **Default Value** | `process.cwd()`
-| **Optional**      | yes
+| _Spec_            | _Def_                                       |
+| ----------------- | ------------------------------------------- |
+| **Type**          | string                                      |
+| **Allowed Value** | any valid path, either absolute or relative |
+| **Default Value** | `process.cwd()`                             |
+| **Optional**      | yes                                         |
 
 The path of the searching starting folder.
 
@@ -133,16 +117,15 @@ The path of the searching starting folder.
 > theoretically a path to a **file** instead of a **folder**
 > as the starting point also works.
 
-<br/>
 
 #### `options.desiredNPMProjectName`
 
-| _Spec_            | _Def_
-|-------------------|--------------
-| **Type**          | multiple
-| **Allowed Value** | string that obeys npm naming rules \| non-string \| empty string
-| **Default Value** | an empty string
-| **Optional**      | yes
+| _Spec_            | _Def_                                                            |
+| ----------------- | ---------------------------------------------------------------- |
+| **Type**          | multiple                                                         |
+| **Allowed Value** | string that obeys npm naming rules \| non-string \| empty string |
+| **Default Value** | an empty string                                                  |
+| **Optional**      | yes                                                              |
 
 The desired npm project name.
 
@@ -162,15 +145,13 @@ The desired npm project name.
 
     > See https://docs.npmjs.com/files/package.json#name
 
-<br/>
-<br/>
 
 ## Return Value
 
-| _Spec_             | _Def_
-|--------------------|--------------
-| **Type**           | object
-| **Possible Value** | an object literal or a `null`
+| _Spec_             | _Def_                         |
+| ------------------ | ----------------------------- |
+| **Type**           | object                        |
+| **Possible Value** | an object literal or a `null` |
 
 *   If the tool fails to find a matched result,
     `null` is returned.
@@ -184,8 +165,3 @@ The desired npm project name.
         packageJSON:        'an object',
     }
     ```
-
-<br/>
-<br/>
-<br/>
-<br/>
